@@ -2,7 +2,7 @@
  #primeiro criamos a variavel do nome do arquivo para então pedir que o programa leia em "rb' para ler em binario 
 import sys
 try:
-    arqname =(input("diretorio do arquivo junto de seu nome e sua extensão e origem caso obs: esteja executando este programa na pasta do seu arquivo desejado n é necessario seu caminho completo  "))
+    arqname =(input("diretorio do arquivo junto de seu nome e sua extensão e origem OBS: caso esteja executando este programa na pasta do seu arquivo desejado n é necessario seu caminho completo  "))
     
     if not arqname:
         sys.exit("nada foi digitado")
