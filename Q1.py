@@ -1,8 +1,8 @@
-#primeiro criamos a variavel do nome do arquivo para então pedir que o programa leia em "rb' para ler em binario 
+
+ #primeiro criamos a variavel do nome do arquivo para então pedir que o programa leia em "rb' para ler em binario 
 import sys
 try:
-    arqname =(input("diretorio do arquivo junto de seu nome e sua extensão e origem "))
-    ##aqui uso o replace pois a barra invertida é usada como caractere de escape em strings assim digitando uma barra é entendida como duas então  então em arquivos para tratala literalmente uso esta funçao para quando o usuario digitar duas \\ ela é convertida em \\\\ para representar apenas uma 
+    arqname =(input("diretorio do arquivo junto de seu nome e sua extensão e origem caso obs: esteja executando este programa na pasta do seu arquivo desejado n é necessario seu caminho completo  "))
     
     if not arqname:
         sys.exit("nada foi digitado")
