@@ -1,17 +1,14 @@
 #primeiro criamos a variavel do nome do arquivo para então pedir que o programa leia em "rb' para ler em binario 
 import sys
 try:
-    arqdir = input('digite o caminho do arquivo')
-    arqdir = arqdir.replace("\\","\\\\")
-    if not arqdir:
-        sys.exit('nada foi digitado')
-    arqname =(input("nome do arquivo junto de sua extensão e origem "))
+    arqname =(input("diretorio do arquivo junto de seu nome e sua extensão e origem "))
+    ##aqui uso o replace pois a barra invertida é usada como caractere de escape em strings assim digitando uma barra é entendida como duas então  então em arquivos para tratala literalmente uso esta funçao para quando o usuario digitar duas \\ ela é convertida em \\\\ para representar apenas uma 
     arqname = arqname.replace("\\","\\\\")
     if not arqname:
         sys.exit("nada foi digitado")
 
 
-##aqui criamos o arquivo e pede se o conteudo do arquivo em lista 
+    ##aqui criamos o arquivo e pede se o conteudo do arquivo em lista 
     with open(arqname,"rb") as arquivo:
         conteudo=list(arquivo.read())
 
@@ -32,8 +29,9 @@ try:
     ##aqui transformamos o resultados em bytes para depois salvar o novo arquivo         
     resultado = bytes(conteudo)
 
-    diretorio_salvo=input('digite o caminho para o arquivo ')
-    arquivo_salvo = diretorio_salvo + input("escolha o nome  e adicione a extensão do seu arquivo criptografado :")
+   
+    arquivo_salvo = input("escolha o nome,diretorio  e adicione a extensão do seu arquivo criptografado :")
+    arquivo_salvo = arquivo_salvo.replace("\\","\\\\")
 
     ##aqui se faz um if para verificar se o nome do novo arquivo n é igual a o antigo  se o nome não for igual o novo arquivo é gerado 
     if not arquivo_salvo:
@@ -45,6 +43,7 @@ try:
             novoarquivo.write(resultado)
 except FileNotFoundError:
     print('o arquivo não foi encontrado ')
+
 
 
 
